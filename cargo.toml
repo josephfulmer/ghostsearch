@@ -1,13 +1,17 @@
 [package]
-name = "ghostsearch"
+name = "tor-research"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
-axum = "0.8"
-tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+rand = "0.9"
+reqwest = { version = "0.12", default-features = false, features = [
+    "rustls-tls",
+    "socks",
+] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-tower-http = { version = "0.6", features = ["cors"] }
-tracing = "0.1"
-tracing-subscriber = "0.3"
+tokio = { version = "1", features = ["full"] }
+uuid = { version = "1", features = ["v4"] }
